@@ -1,347 +1,222 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-
-const filters = [
-  "Alle Essays",
-  "Identiteit",
-  "Beleid & wijk",
-  "Voetbal",
-  "Opvoeding & jeugd",
-  "Systemen",
-];
-
-const essays = [
-  {
-    id: 1,
-    variant: "featured",
-    category: "Beleid & wijk",
-    date: "12 Oct 2024",
-    title: "De Onzichtbare Grens in de Wijk",
-    excerpt:
-      "Waarom we beleid maken voor mensen die we niet spreken, en de realiteit van de straat negeren voor een Excel-sheet.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBXzwyw4TdA8XAXFJQzX3p5178Uq-kfTb2-dY5NYZny9u8_RUG9PJC4qu-tdWPRo9CzCjO1hesb7iNcDrxSIyhtdf1XbOTM4-DAhRJ4VkRZ2kVgUPz0Va2uAIkpZoPzjKV_Hf9Z3qX32Jy5nv_DhC688H-Ke68Ob4CCZLvhOFE_eDaz4hDykCZv2m5UBMaHNNQzuOYR2D3IgQsc3j2ny9Msm68vRTq9_JhRpb-eqjCt_mPIbzljUdBxpTEiYKumNnVlX5rzkTRMtl0",
-    colSpan: "md:col-span-8",
-  },
-  {
-    id: 2,
-    variant: "small",
-    category: "Voetbal",
-    date: "04 Oct",
-    title: "De Zondagse Mis",
-    excerpt:
-      "Hoe het amateurvoetbal de laatste plek is waar de maatschappij nog echt samenkomt.",
-    colSpan: "md:col-span-4",
-  },
-  {
-    id: 3,
-    variant: "small",
-    category: "Identiteit",
-    date: "28 Sep",
-    title: "Vreemdeling in Eigen Spiegel",
-    excerpt:
-      "Over de zoektocht naar een thuis tussen twee werelden die beide niet helemaal passen.",
-    icon: "identity_platform",
-    colSpan: "md:col-span-4",
-  },
-  {
-    id: 4,
-    variant: "featured-reverse",
-    category: "Systemen",
-    date: "15 Sep",
-    title: "De Paradox van de Planner",
-    excerpt:
-      "Waarom elke poging om de stad te 'optimaliseren' de ziel juist verder naar de randen drukt.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCpJae8yLo-S-HTW4PRBYF8njODYF5EI1GMCLN4hzGm5cSyLKX1ZM5x7SCpxTg0OO_yayMF3verr4eXbcnEENpMpfuUaLzqSAPmMempVeIrhINX_d2EEiU9EUqLMlUn1vWYPO14tMU4QtXbQVhEjzbdKhmE1oz2RtMG6RI5cVtW0iE4RIsG2piU_Fe0tp-zTf3E_6Q9RpZ55kkDbm9bynLKxD6n4cQ5p-0fr0W-T2dG_TciGj5WeNGNxfzfQfSOBmlciN6s9x5-Ukk",
-    colSpan: "md:col-span-8",
-  },
-  {
-    id: 5,
-    variant: "small",
-    category: "Opvoeding & jeugd",
-    date: "02 Sep",
-    title: "Vaders van de Straat",
-    excerpt:
-      "De onzichtbare rollen die mannen spelen in het grootbrengen van een buurt.",
-    colSpan: "md:col-span-4",
-  },
-  {
-    id: 6,
-    variant: "accent",
-    category: "Beleid & wijk",
-    date: "21 Aug",
-    title: "De Papieren Wijk",
-    excerpt:
-      "Wanneer beleid alleen nog maar over cijfers gaat, verliezen we de mensen uit het oog.",
-    colSpan: "md:col-span-4",
-  },
-  {
-    id: 7,
-    variant: "small",
-    category: "Systemen",
-    date: "10 Aug",
-    title: "Lof der Vertraging",
-    excerpt:
-      "In een stad die altijd rent, is stilstand de ultieme vorm van verzet.",
-    colSpan: "md:col-span-4",
-  },
-];
-
 export default function DenkenPage() {
-  const [activeFilter, setActiveFilter] = useState("Alle Essays");
-
-  const visibleEssays = essays.filter(
-    (e) =>
-      activeFilter === "Alle Essays" ||
-      e.category === activeFilter
-  );
-
   return (
     <div className="relative">
-      <div className="fixed inset-0 stipple z-0 pointer-events-none" />
+      <div className="fixed inset-0 stipple z-0 pointer-events-none opacity-30" />
 
+      {/* Page hero */}
       <div className="max-w-[1400px] mx-auto px-6 py-12 md:py-24 relative z-10">
-        {/* Hero */}
-        <header className="mb-20">
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            <div className="md:w-2/3">
-              <span className="font-label text-primary font-bold tracking-widest uppercase mb-4 block">
-                Manifesto / Denken
-              </span>
-              <h1 className="text-6xl md:text-9xl font-black font-headline uppercase leading-[0.85] tracking-tighter mb-8">
-                Hier <br /> Schrijf <br /> Ik.
-              </h1>
-              <p className="text-xl md:text-3xl font-light max-w-2xl text-on-surface leading-tight">
-                Over wat ik zie, wat ik mis, en wat ik denk dat anders kan. Geen
-                column voor een krant. Geen LinkedIn-post. Gewoon denken, op
-                papier.
-              </p>
-            </div>
-            <div className="md:w-1/3 flex flex-col gap-6 w-full">
-              <div className="bg-primary-container p-1 ink-border-heavy hard-shadow rotate-1 h-64 relative overflow-hidden group">
-                <img
-                  alt="Urban Texture"
-                  className="w-full h-full object-cover filter contrast-125 grayscale group-hover:grayscale-0 transition-all duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuARWc4SzG_zEa1Utptes-IlUzOMgW9gCl1yWpuVgUVOS4qmOLNifpVzewk8KuvR1d606adG3V-jLnBg41Lt2JlSUssLEZnFpS9uZL5RrocN0BKpjFXnHwa4YnLlafVwD05aCMOZMeCiIs-hcVXVIpmEIE3fbm2HCNOUrG2JbJenx8-SrK6lRwQHLmzzXp8khv4SD6dkINntd31TWWk6ph0JZ3it6qvwTbVAF58daeTY-rjwfyZHxOM5SpOdRHifxgfP6SMWx1t0PVQ"
-                />
-                <div className="absolute inset-0 bg-primary opacity-20 mix-blend-multiply" />
-              </div>
-              <div className="font-label text-xs uppercase tracking-widest bg-surface-container-highest p-4 border-l-4 border-primary">
-                [Status: Ongefilterd] <br />
-                [Locatie: De Straat] <br />
-                [Moment: Nu]
-              </div>
-            </div>
-          </div>
+        <header className="mb-20 border-b-4 border-ink pb-12">
+          <span className="font-label text-primary font-bold tracking-widest uppercase mb-4 block">
+            Manifesto / Denken
+          </span>
+          <h1 className="text-6xl md:text-9xl font-black font-headline uppercase leading-[0.85] tracking-tighter mb-8">
+            Hier <br /> Schrijf <br /> Ik.
+          </h1>
+          <p className="text-xl md:text-2xl font-light max-w-2xl text-on-surface leading-tight">
+            Over wat ik zie, wat ik mis, en wat ik denk dat anders kan. Geen
+            column voor een krant. Geen LinkedIn-post. Gewoon denken, op papier.
+          </p>
         </header>
 
-        {/* Filter Tags */}
-        <section className="mb-16">
-          <div className="flex flex-wrap gap-4 items-center border-t-2 border-b-2 border-outline py-6">
-            <span className="font-label text-xs uppercase font-bold mr-4 text-outline">
-              Filter op:
+        {/* The Essay */}
+        <article className="max-w-3xl">
+          {/* Meta */}
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-label text-[11px] bg-primary text-white px-3 py-1 uppercase tracking-tighter">
+              Essay
             </span>
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-1 border border-outline font-label text-xs uppercase transition-colors ${
-                  activeFilter === filter
-                    ? "bg-primary-container text-white"
-                    : "hover:bg-primary-container hover:text-white"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
+            <span className="font-label text-[11px] border border-ink px-3 py-1 uppercase tracking-tighter">
+              Identiteit
+            </span>
+            <span className="font-label text-[11px] text-on-surface-variant uppercase">
+              22 Apr 2026
+            </span>
           </div>
-        </section>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {visibleEssays.map((essay) => {
-            if (essay.variant === "featured") {
-              return (
-                <article key={essay.id} className={`${essay.colSpan} group`}>
-                  <div className="bg-surface-container-low ink-border-medium flex flex-col md:flex-row h-full overflow-hidden">
-                    <div className="md:w-1/2 overflow-hidden border-r-0 md:border-r-2 border-outline">
-                      <img
-                        alt={essay.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        src={essay.image}
-                      />
-                    </div>
-                    <div className="md:w-1/2 p-8 flex flex-col justify-between">
-                      <div>
-                        <div className="flex justify-between items-start mb-6">
-                          <span className="font-label text-[10px] bg-primary text-white px-2 py-0.5 uppercase tracking-tighter">
-                            Featured Essay
-                          </span>
-                          <span className="font-label text-[10px] text-outline uppercase">
-                            {essay.date}
-                          </span>
-                        </div>
-                        <h2 className="text-4xl font-black font-headline uppercase leading-none mb-6 group-hover:text-primary transition-colors">
-                          {essay.title}
-                        </h2>
-                        <p className="text-on-surface-variant font-body mb-8">
-                          {essay.excerpt}
-                        </p>
-                      </div>
-                      <Link
-                        href="#"
-                        className="font-label text-xs font-bold uppercase flex items-center gap-2 group/link"
-                      >
-                        Lees Verder
-                        <span className="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-2">
-                          arrow_forward
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              );
-            }
+          {/* Title */}
+          <h2 className="font-headline text-4xl md:text-6xl font-black uppercase leading-none tracking-tighter mb-12 border-l-8 border-primary-container pl-8">
+            Ze kiezen niet tégen Nederland. Ze kiezen vóór zichzelf.
+          </h2>
 
-            if (essay.variant === "featured-reverse") {
-              return (
-                <article key={essay.id} className={`${essay.colSpan} group`}>
-                  <div className="bg-surface-container-highest ink-border-medium flex flex-col md:flex-row-reverse h-full overflow-hidden">
-                    <div className="md:w-2/5 overflow-hidden border-l-0 md:border-l-2 border-outline">
-                      <img
-                        alt={essay.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale brightness-90"
-                        src={essay.image}
-                      />
-                    </div>
-                    <div className="md:w-3/5 p-8 flex flex-col justify-between">
-                      <div>
-                        <div className="flex justify-between mb-6">
-                          <span className="font-label text-[10px] border border-outline px-2 py-0.5 uppercase">
-                            {essay.category}
-                          </span>
-                          <span className="font-label text-[10px] text-outline uppercase">
-                            {essay.date}
-                          </span>
-                        </div>
-                        <h2 className="text-3xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">
-                          {essay.title}
-                        </h2>
-                        <p className="text-on-surface-variant font-body">
-                          {essay.excerpt}
-                        </p>
-                      </div>
-                      <Link
-                        href="#"
-                        className="mt-6 font-label text-xs font-bold uppercase flex items-center gap-2 group/link"
-                      >
-                        Open Archief
-                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1">
-                          arrow_forward
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              );
-            }
+          {/* Body */}
+          <div className="font-body text-lg md:text-xl leading-relaxed text-on-surface space-y-8">
+            <p>
+              Rafael van der Vaart zei het onlangs. Dat Marokkaanse voetballers
+              niets toevoegen aan het Nederlands elftal. Het is een uitspraak die
+              past in een patroon. Kijk naar een klein stukje van de
+              werkelijkheid, trek een grote conclusie en ga naar huis.
+            </p>
 
-            if (essay.variant === "accent") {
-              return (
-                <article key={essay.id} className={`${essay.colSpan} group`}>
-                  <div className="bg-primary-container p-8 border-4 border-[#121216] h-full flex flex-col justify-between hard-shadow">
-                    <div>
-                      <div className="flex justify-between mb-6">
-                        <span className="font-label text-[10px] bg-[#121216] text-white px-2 py-0.5 uppercase">
-                          Policy
-                        </span>
-                        <span className="font-label text-[10px] text-[#121216] uppercase">
-                          {essay.date}
-                        </span>
-                      </div>
-                      <h2 className="text-2xl font-black font-headline uppercase leading-tight mb-4 text-[#121216]">
-                        {essay.title}
-                      </h2>
-                      <p className="text-sm font-body text-[#121216] opacity-80">
-                        {essay.excerpt}
-                      </p>
-                    </div>
-                    <Link
-                      href="#"
-                      className="mt-8 font-label text-xs font-bold uppercase flex items-center gap-2 text-[#121216] hover:underline"
-                    >
-                      Lees Essay
-                      <span className="material-symbols-outlined text-sm">
-                        arrow_forward
-                      </span>
-                    </Link>
-                  </div>
-                </article>
-              );
-            }
+            <p>
+              Maar laten we even doordenken. De discussie gaat over spelers als{" "}
+              <strong>Anass Salah-Eddine</strong> en{" "}
+              <strong>Souffian El Karouani</strong>, twee van de grotere talenten
+              die voor Marokko hebben gekozen. Eerder deden{" "}
+              <strong>Soufyan Amrabat</strong>,{" "}
+              <strong>Noussair Mazraoui</strong> en <strong>Hakim Ziyech</strong>{" "}
+              hetzelfde. En steeds opnieuw volgt dezelfde reflex: hadden ze wel
+              de kwaliteit voor Oranje? Of: zouden ze überhaupt in aanmerking
+              zijn gekomen?
+            </p>
 
-            return (
-              <article key={essay.id} className={`${essay.colSpan} group`}>
-                <div className="bg-surface p-8 ink-border-medium h-full flex flex-col justify-between hover:bg-surface-container-highest transition-colors relative overflow-hidden">
-                  {essay.icon && (
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                      <span className="material-symbols-outlined text-8xl">
-                        {essay.icon}
-                      </span>
-                    </div>
-                  )}
-                  <div className="z-10">
-                    <div className="flex justify-between mb-6">
-                      <span className="font-label text-[10px] border border-outline px-2 py-0.5 uppercase">
-                        {essay.category}
-                      </span>
-                      <span className="font-label text-[10px] text-outline uppercase">
-                        {essay.date}
-                      </span>
-                    </div>
-                    <h2 className="text-2xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">
-                      {essay.title}
-                    </h2>
-                    <p className="text-sm font-body text-on-surface-variant line-clamp-3">
-                      {essay.excerpt}
-                    </p>
-                  </div>
-                  <Link
-                    href="#"
-                    className="mt-8 font-label text-xs font-bold uppercase flex items-center gap-2 group/link z-10"
-                  >
-                    Lees Essay
-                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1">
-                      arrow_forward
-                    </span>
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
+            <p>
+              Dat is precies de verkeerde vraag. Want de reden waarom deze
+              jongens voor Marokko kiezen, heeft niets te maken met of ze goed
+              genoeg zijn voor Nederland. De redenen zijn simpeler en tegelijk
+              veel ongemakkelijker. De eerste reden: de afweging is er gewoon
+              niet meer. Tien jaar geleden was kiezen voor Marokko, kiezen voor
+              een land dat nauwelijks voorkwam in de latere rondes van
+              internationale toernooien. Die rekening is anders geworden. Marokko
+              haalde de halve finale van het WK, als eerste Afrikaanse land ooit.
+              Marokko heeft nu meer dan tien jaar geïnvesteerd, ontwikkeld en
+              gestructureerd. De sportieve reden om voor Nederland te kiezen
+              boven Marokko is weggevallen. En dat is voor Nederland een veel
+              groter probleem dan één speler meer of minder.
+            </p>
 
-          {/* Callout quote — always visible */}
-          <article className="md:col-span-12">
-            <div className="bg-[#121216] p-12 text-center border-4 border-primary relative">
-              <div className="absolute inset-0 stipple opacity-5 pointer-events-none" />
-              <h2 className="font-headline text-5xl md:text-7xl font-black text-[#fbf9f2] uppercase tracking-tighter mb-8 italic">
-                &ldquo;Echt denken begint waar de structuur ophoudt.&rdquo;
-              </h2>
-              <div className="w-24 h-1 bg-primary mx-auto" />
+            <p>
+              Want wat Marokko de afgelopen jaren heeft laten zien, gaat allang
+              niet meer over één elftal. Het U20-team won in oktober 2025 het
+              wereldkampioenschap in Chili, 2-0 tegen Argentinië in de finale.
+              Eerste Arabische land ooit. Het U17-team bereikte de kwartfinale
+              van het WK in Qatar. Het Olympisch team pakte brons in Parijs 2024,
+              ook dat voor het eerst voor een Arabisch land. De mannen wonnen de
+              Arab Cup. De zaalvoetbalmannen staan zesde van de wereld en zijn
+              drie keer op rij Afrikaans kampioen. De zaalvoetbalvrouwen wonnen
+              de allereerste editie van de Afrika Cup. De vrouwen deden voor het
+              eerst mee aan een WK in 2023 en haalden de finale van de Afrika Cup
+              in 2024. Dit is geen toeval meer, dit is een visie.
+            </p>
+
+            <p>
+              En die visie heeft een Nederlandse handtekening. Pim Verbeek,
+              inmiddels overleden, was rond 2010 een van de architecten van de
+              ontwikkeling die Marokkaans voetbal in gang heeft gezet. Een
+              Nederlander. Die niet alleen zijn kennis meenam, maar ook een
+              principe: je speelt op kwaliteit, niet op relaties. In Marokko was
+              dat op dat moment geen vanzelfsprekendheid. Verbeek maakte het wel
+              zo. En het is hem niet makkelijk gemaakt, waarom weet ik dat?
+              Omdat ik als jonge voetballer midden in die ontwikkeling bewoog,
+              als pupil van trainer Verbeek. Hij had lef om spelers uit Europa te
+              selecteren ook als dat ten koste ging van spelers uit de competitie
+              en met contacten in de media en bestuur. Onder zijn leiding haalden
+              we de finale van de Afrika Cup U20 en ook de Olympische Spelen van
+              2012 in Londen. En op dat fundament is de rest gebouwd. Nederland
+              heeft gebouwd aan de ontwikkeling die Marokko nu maakt.
+            </p>
+
+            <p>
+              Maar er is ook een tweede reden. Eentje die zwaarder weegt en die
+              mij ook pijn doet. Want naast de sportieve afweging is er een
+              maatschappelijke. En die is minstens zo bepalend. Deze jongens
+              groeien op in Nederland. Ze worden gevormd door Nederland. Maar ze
+              worden ook beoordeeld door Nederland.
+            </p>
+
+            <p>
+              Het is als kiezen tussen je vader en je moeder. Ik kan het weten,
+              want ik heb die keuze zelf op mijn negentiende moeten maken. Na
+              twee jeugd-EK&apos;s met Oranje U17 en U19 koos ik toch voor
+              Marokko. Niet omdat ik minder van Nederland hou. Maar omdat de een
+              je onvoorwaardelijk omarmt en de ander steeds vraagt of je je best
+              wel genoeg doet. En als een buurjongen iets fout doet, word jij
+              daar ook op beoordeeld. Dan hoor je opeens bij de &quot;ander&quot;.
+              Rafael zou waarschijnlijk hebben gezegd dat ik niet goed genoeg was
+              voor het Nederlands elftal. Misschien heeft hij gelijk. Maar dat
+              maakt dit punt niet minder waar.
+            </p>
+
+            {/* Image */}
+            <figure className="my-12 border-2 border-ink">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4E12AQHqKsY-mC3T3A/article-inline_image-shrink_1500_2232/B4EZ1UvOrDIQAU-/0/1775243161282?e=1778716800&v=beta&t=lpofuErYcmkcnM1FV3B4SaaomMJNyurLFXEkam74U54"
+                alt="Voetbal International — illustratie bij het artikel"
+                className="w-full object-cover"
+              />
+              <figcaption className="font-label text-xs uppercase tracking-widest px-4 py-3 border-t-2 border-ink text-on-surface-variant">
+                Bron: Instagram @voetbalinternational.nl
+              </figcaption>
+            </figure>
+
+            <p>
+              De discussie begint altijd bij de keuze van een speler. Alleen
+              begint het proces veel eerder. Bij Eredivisie-wedstrijden valt me
+              op dat commentatoren jongens zoals Ouaissa of Ould-Chikh aanduiden
+              als &quot;de Marokkaan&quot;. Laatst nog in een bericht van VI werd
+              Ouaissa beschreven als de Marokkaanse Limburger. Waarom niet gewoon
+              Limburger? En dit zijn jongens die hier geboren en opgegroeid zijn,
+              die hun eerste teug zuurstof in dit land hebben ingeademd. En ik
+              snap dat dit mensen niet opvalt. Het is onderhuids. Het is niet
+              iets waar je zelfs als jonge voetballer bewust bij stilstaat, maar
+              het vormt je wel. Het heeft impact. Want voor een jongen die
+              opgroeit in Overvecht, Amsterdam-West of Rotterdam-Zuid is het geen
+              detail. Het is een bevestiging van wat hij al de hele tijd voelt.
+              Het maakt niet uit wat ik doe, wat ik bereik, hoe goed ik mijn
+              best doe. Echt erbij horen zal ik nooit.
+            </p>
+
+            {/* Blockquote */}
+            <blockquote className="border-l-8 border-primary-container pl-8 py-4 my-10 bg-surface-container-low border-2 border-l-8 border-primary-container p-8">
+              <p className="font-body text-xl md:text-2xl italic text-on-surface leading-relaxed">
+                &ldquo;De Marokkaanse gemeenschap is voor meer dan de helft
+                verantwoordelijk voor de geweldscriminaliteit. Dat is in absolute
+                zin, dus nog niet eens relatief. Dan kun je niet zeggen dat er
+                niets aan de hand is, zeker niet als je ziet dat dit ook speelt
+                in België en voor een groot deel in Frankrijk.&rdquo;
+              </p>
+              <cite className="font-label text-sm uppercase tracking-widest mt-6 block text-on-surface-variant not-italic">
+                — Sander Schaepman, Vandaag Inside (SBS6, 22 januari 2026)
+              </cite>
+            </blockquote>
+
+            <p>
+              Zonder nuance, zonder context, zonder tegenspraak aan tafel.
+              Mainstream media lieten het grotendeels passeren. Het waren
+              TikTok-kanalen die de onzinnigheid ervan blootlegden. Dat zegt meer
+              dan genoeg. Het betekent dat je over deze groep kunt zeggen wat je
+              wilt, dat het doorgaat en dat het geloofd wordt.
+            </p>
+
+            {/* Closing — visually emphasised */}
+            <div className="border-4 border-ink p-8 md:p-12 bg-on-surface text-surface hard-shadow mt-12">
+              <p className="font-body text-xl md:text-2xl leading-relaxed">
+                Als je wil dat de volgende generatie voor Nederland kiest, moet
+                je twee dingen doen. Het voetbalsysteem vernieuwen, want de
+                voorsprong bestaat niet meer. En de maatschappij veranderen, want
+                een warm bad geef je niet alleen op het moment dat het jou
+                uitkomt. Anders is de keuze allang gemaakt.{" "}
+                <em className="font-black">En terecht.</em>
+              </p>
             </div>
-          </article>
-        </div>
+          </div>
 
-        {/* Load More */}
-        <div className="mt-20 flex justify-center">
-          <button className="px-12 py-4 ink-border-heavy font-label font-bold uppercase text-lg interaction-shift hard-shadow bg-surface hover:bg-primary-container hover:text-white transition-colors">
-            Toon Meer Gedachten
-          </button>
-        </div>
+          {/* Author footer */}
+          <div className="mt-16 pt-8 border-t-4 border-ink flex items-center justify-between flex-wrap gap-6">
+            <div>
+              <p className="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-1">
+                Geschreven door
+              </p>
+              <p className="font-headline text-2xl font-black uppercase tracking-tighter">
+                Imad Najah
+              </p>
+              <p className="font-label text-xs uppercase tracking-widest text-primary mt-1">
+                IMADGINE — Urban Advisory
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <span className="font-label text-[11px] border border-ink px-3 py-1.5 uppercase tracking-tighter">
+                Identiteit
+              </span>
+              <span className="font-label text-[11px] border border-ink px-3 py-1.5 uppercase tracking-tighter">
+                Voetbal
+              </span>
+              <span className="font-label text-[11px] border border-ink px-3 py-1.5 uppercase tracking-tighter">
+                Beleid & wijk
+              </span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   );
