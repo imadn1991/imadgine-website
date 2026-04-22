@@ -27,4 +27,4 @@ jobs:
           sudo apt-get install -y sshpass
           sshpass -e rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=no -o PreferredAuthentications=password" \
-            ./out/ imadginenl@imadgi.ssh.transip.me:httpdocs/
+            ./out/ imadginenl@imadgi.ssh.transip.me:www/
