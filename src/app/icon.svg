@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#fbf9f2"/>
+  <!-- Gesloten ooglid -->
+  <path d="M 3 17 C 8 25 24 25 29 17"
+        stroke="#121216" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Wimper 1 - uiterst links -->
+  <line x1="5"  y1="16.5" x2="1"  y2="7"  stroke="#121216" stroke-width="2" stroke-linecap="round"/>
+  <!-- Wimper 2 - links -->
+  <line x1="10" y1="21"   x2="9"  y2="11" stroke="#121216" stroke-width="2" stroke-linecap="round"/>
+  <!-- Wimper 3 - midden -->
+  <line x1="16" y1="23"   x2="16" y2="12" stroke="#121216" stroke-width="2" stroke-linecap="round"/>
+  <!-- Wimper 4 - rechts -->
+  <line x1="22" y1="21"   x2="23" y2="11" stroke="#121216" stroke-width="2" stroke-linecap="round"/>
+  <!-- Wimper 5 - uiterst rechts -->
+  <line x1="27" y1="16.5" x2="31" y2="7"  stroke="#121216" stroke-width="2" stroke-linecap="round"/>
+</svg>
