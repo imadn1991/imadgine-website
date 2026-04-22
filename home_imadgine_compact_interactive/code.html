@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ADVISORY.GRID | IMADGINE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Geist+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#006493",
+                        "primary-container": "#ff5f1f",
+                        "outline": "#121216",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#009de4",
+                        "surface-container-highest": "#e4e2dc",
+                        "secondary-fixed": "#e4e1e7",
+                        "on-primary-container": "#561700",
+                        "tertiary-fixed-dim": "#8dcdff",
+                        "secondary-container": "#e4e1e7",
+                        "background": "#fbf9f2",
+                        "primary-fixed": "#ffdbcf",
+                        "inverse-surface": "#30312c",
+                        "on-primary-fixed": "#390c00",
+                        "on-background": "#1b1c18",
+                        "primary": "#ab3600",
+                        "primary-fixed-dim": "#ffb59c",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#656469",
+                        "on-surface-variant": "#5b4138",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#004b70",
+                        "surface": "#fbf9f2",
+                        "on-tertiary-container": "#00304a",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e1",
+                        "surface-bright": "#fbf9f2",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffb59c",
+                        "surface-tint": "#ab3600",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f1ea",
+                        "surface-dim": "#dcdad3",
+                        "surface-container-low": "#f6f4ed",
+                        "surface-variant": "#e4e2dc",
+                        "on-surface": "#1b1c18",
+                        "outline-variant": "#e3bfb3",
+                        "surface-container": "#f0eee7",
+                        "on-primary-fixed-variant": "#832700",
+                        "on-secondary-fixed-variant": "#47464b",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c8c5cb",
+                        "tertiary-fixed": "#cae6ff",
+                        "secondary": "#5f5e63",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "on-tertiary-fixed": "#001e30"
+                    },
+                    fontFamily: {
+                        "headline": ["Bricolage Grotesque", "sans-serif"],
+                        "body": ["Work Sans", "sans-serif"],
+                        "label": ["Geist Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .stipple {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .btn-shadow:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #121216;
+        }
+        .btn-shadow {
+            box-shadow: 4px 4px 0px #121216;
+            transition: all 0.1s ease;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#fbf9f2] dark:bg-[#121216] docked full-width top-0 border-b-2 border-[#121216] dark:border-[#fbf9f2] sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-black uppercase tracking-tighter text-[#121216] dark:text-[#fbf9f2] font-headline" href="#">ADVISORY.GRID</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#FF5F1F] font-bold border-b-2 border-[#FF5F1F] pb-1 font-label text-sm tracking-widest" href="#">MISSION</a>
+<a class="text-[#121216] dark:text-[#fbf9f2] font-label text-sm tracking-widest hover:text-[#FF5F1F] transition-colors duration-100" href="#">EXPERTISE</a>
+<a class="text-[#121216] dark:text-[#fbf9f2] font-label text-sm tracking-widest hover:text-[#FF5F1F] transition-colors duration-100" href="#">INTEL</a>
+<a class="text-[#121216] dark:text-[#fbf9f2] font-label text-sm tracking-widest hover:text-[#FF5F1F] transition-colors duration-100" href="#">CONTACT</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label text-sm font-bold btn-shadow border-2 border-[#121216] uppercase tracking-tighter">
+                GET STARTED
+            </button>
+</div>
+</header>
+<main class="relative overflow-hidden">
+<div class="stipple absolute inset-0 z-0"></div>
+<!-- Section 1: Split Hero (Denken / Samenwerken) -->
+<section class="grid grid-cols-1 md:grid-cols-2 border-b-2 border-outline relative z-10">
+<!-- Column 1: Denken -->
+<div class="bg-surface p-12 md:p-24 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-outline">
+<span class="font-label text-xs uppercase tracking-widest text-primary-container mb-4 block">PROCESS_01</span>
+<h1 class="font-headline text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter mb-8">DENKEN</h1>
+<p class="font-body text-xl md:text-2xl max-w-md mb-12">
+                    Strategische diepgang voor stedelijke vraagstukken. Wij analyseren de onzichtbare krachten die de stad vormen.
+                </p>
+<div>
+<button class="bg-surface border-4 border-outline px-8 py-4 font-label font-bold text-lg btn-shadow uppercase tracking-tighter hover:bg-surface-container-high transition-colors">
+                        ONZE VISIE
+                    </button>
+</div>
+</div>
+<!-- Column 2: Samenwerken -->
+<div class="bg-primary-container p-12 md:p-24 flex flex-col justify-center relative overflow-hidden">
+<div class="stipple absolute inset-0 opacity-10"></div>
+<span class="font-label text-xs uppercase tracking-widest text-on-primary-container mb-4 block relative z-10">PROCESS_02</span>
+<h2 class="font-headline text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter mb-8 text-on-primary-container relative z-10">SAMEN<br/>WERKEN</h2>
+<p class="font-body text-xl md:text-2xl max-w-md mb-12 text-on-primary-container relative z-10">
+                    Samen bouwen aan veerkrachtige wijken. Geen bureaucratie, maar radicale actie op de grond.
+                </p>
+<div class="relative z-10">
+<button class="bg-outline text-surface px-8 py-4 font-label font-bold text-lg btn-shadow uppercase tracking-tighter hover:bg-on-surface-variant transition-colors">
+                        DOE MEE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Section 2: Urban Image Carousel (Simulated Grid) -->
+<section class="p-4 md:p-8 bg-surface-container-low border-b-2 border-outline">
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex-none w-80 h-[500px] border-2 border-outline bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="Monochrome grainy photograph of a brutalist concrete building facade in a dense urban environment with dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt52x5mhHfowCeN-ljtvJNXkhE9tGEmsMrdxhQUKlAGeMOGWaRzQnehp1PMUQFxCK5w9ezpAeaGlUgQT0HbJS8Lusad5W3LwgTNGPPzUYoIPsCQFPIGgAEEhgv78L9V6xSKVxB02dPLINKM9SUdfe4ZXevh9TWfzhIYEgmJnIf6_XyVIUJgi_YJJRN4dpDxz7NhfhibDFpy5IE3Jg5maoTj1Lo4prbrdIkYdI-Lyle317xBhmjEFsPl-SPXyDcD39TsQQ3VgtA5KY"/>
+<div class="absolute bottom-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 font-label text-xs font-bold uppercase border border-outline">
+                        BRUTAL_STRUCT
+                    </div>
+</div>
+<div class="flex-none w-80 h-[500px] border-2 border-outline bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="Blurred street lights at night in a rainy city, long exposure with orange and white light trails reflecting on asphalt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh4YpuH7mN0JceEjdLWGvsnj1WPx5FaQQ6leb7eakiMdO00R2qJzjEirOAyT0XN4Xu1N72uq1QFQsbOno4aNdUf-xPtqtlUQLWsn-ME6G9v29xDFg3I2Z7bYBf4d6kjwjm8mmT4x8dQKp_-Wdrb1LeOW9bdymkjxATKZRfb6aJXpBsmfQTvY8ZNhDLImvMGi63EFSLUTYXyO6zo9kYJeZuGS3Eq3TTyG818-amiurQ9tY9mdeinewvF8JGLu0ivByinJePfIt7FG0"/>
+<div class="absolute bottom-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 font-label text-xs font-bold uppercase border border-outline">
+                        URBAN_FLOW
+                    </div>
+</div>
+<div class="flex-none w-80 h-[500px] border-2 border-outline bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="High angle shot of a crosswalk in a busy metropolis with people walking and vibrant urban textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6mpqOaMwp8FeKH4HSZwOzomWYtm3DR0mzYLcJMOVV81K9Xq5jxxzlphaLbgp0bNDpal0Uqxq2hXY7eCoREmlKDwJMVpoF4VKZD90ha7CPNUHSiijjYa90jaleUBbgTiypvSFcD4Ti9RA-dlli0zqOdNf10iPsJPAy3bq2xukXRNi7xY5BkMU3YPRnKY63QE6Puk28osnd-oHRxxZh2H1C3TxQGRl7PueJrdsTZo3evE8j2WqdzMgR4z8pk-5QLrmaSd6AgnYlSJg"/>
+<div class="absolute bottom-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 font-label text-xs font-bold uppercase border border-outline">
+                        STREET_GRID
+                    </div>
+</div>
+<div class="flex-none w-80 h-[500px] border-2 border-outline bg-surface relative group overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="Detail of rusted metal and industrial architecture in an old harbor district, high contrast texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZrjJ9Ho33TAMsCRDAEMwLusQQys1IHpYKRByP6QPsf8njRWLMpLPbXdYYJHMsp8Kc7mtl5upknGMMiPzmUv11579jCckPsmtBLJ5cwCdRluzsqDKIP451dDSl53OU1vSIOcDGKb5f0pLy9AI8GMt7LM6I_nj3R17n7d63Gx42QxxujfY8QqVUqU-aYMxXZYZ1LL3FS8ZqDOxmZYFjXQgmBS0EXH2nEkx13OkUnlQI1r6RhNwNR4i7rXzyQKs0AVmGHZ1zlYhg_sc"/>
+<div class="absolute bottom-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 font-label text-xs font-bold uppercase border border-outline">
+                        RAW_METAL
+                    </div>
+</div>
+</div>
+</section>
+<!-- Section 3: Over Mij -->
+<section class="px-6 py-20 md:py-32 max-w-screen-xl mx-auto flex flex-col md:flex-row gap-16 border-b-2 border-outline">
+<div class="flex-1">
+<span class="font-label text-sm uppercase tracking-widest text-primary-container mb-6 block">ABOUT_FOUNDER</span>
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase leading-none tracking-tighter mb-8">HET GEZICHT ACHTER DE GRID.</h2>
+</div>
+<div class="flex-1 flex flex-col justify-end">
+<p class="font-body text-xl md:text-2xl mb-10 leading-relaxed text-on-surface">
+                    Geen consultants in pak, maar een partner die de straat kent. IMADGINE brengt expertise en praktijk samen om steden menselijker te maken.
+                </p>
+<a class="inline-block" href="#">
+<button class="bg-primary-container text-on-primary-container px-12 py-5 font-label font-bold text-xl btn-shadow border-2 border-outline uppercase tracking-tighter">
+                        OVER MIJ
+                    </button>
+</a>
+</div>
+</section>
+<!-- Section 4: LAATSTE ARTIKEL -->
+<section class="bg-surface-container-highest p-6 md:p-12 relative">
+<div class="stipple absolute inset-0 opacity-5"></div>
+<div class="max-w-screen-2xl mx-auto relative z-10">
+<div class="flex justify-between items-end mb-12">
+<h3 class="font-headline text-4xl font-black uppercase tracking-tighter">LAATSTE ARTIKEL</h3>
+<span class="font-label text-sm uppercase tracking-tighter opacity-60">ARCHIVE_2024</span>
+</div>
+<article class="grid grid-cols-1 md:grid-cols-12 border-2 border-outline bg-surface">
+<div class="md:col-span-7 h-96 md:h-auto border-b-2 md:border-b-0 md:border-r-2 border-outline overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:scale-105 transition-transform duration-700" data-alt="Abstract urban landscape with power lines and brutalist structures against a dark moody sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGNCF44N6uI3ed9_phTJGDJrUrMSs4dw90wEZK-Lq5Z3bMGvAgs9ZwXfODYQ7p37IHwhDgSHA_R8qz45-9po4VgGScO9pZQ_AHJmOpKBFOiJyFDZfVpnKmnKigLtTMEfrJh4g6u4A1EXS4mPRoQtGp8xutTniIaKnuBmj3YEPD-bA5ZOjXWEGZkN4yguoXBq_NExccMEgvg9eafTl0ewvYnRDuCZsvdtFgjINb-XSFPnFcX2AHbFeCGAXn0sifRmyJepf3Asr2mKs"/>
+</div>
+<div class="md:col-span-5 p-10 flex flex-col justify-between">
+<div>
+<div class="flex gap-2 mb-6">
+<span class="bg-outline text-surface px-2 py-1 font-label text-xs uppercase">URBANISM</span>
+<span class="border border-outline px-2 py-1 font-label text-xs uppercase">SOCIOLOGY</span>
+</div>
+<h4 class="font-headline text-4xl font-extrabold uppercase leading-none tracking-tighter mb-6">De onzichtbare grens in de wijk</h4>
+<p class="font-body text-lg mb-8 text-on-surface-variant">
+                                Hoe fysieke architectuur onbewust uitsluiting creëert en wat we kunnen doen om de muren te slechten. Een diepe duik in sociaal-ruimtelijke segregatie.
+                            </p>
+</div>
+<a class="flex items-center gap-4 font-label font-bold uppercase tracking-widest text-primary hover:text-primary-container transition-colors group" href="#">
+                            LEES ESSAY 
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#121216] dark:bg-[#000000] border-t-4 border-[#121216] text-[#fbf9f2]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 max-w-screen-2xl mx-auto">
+<div class="text-lg font-black text-[#fbf9f2] font-headline uppercase">ADVISORY.GRID</div>
+<div class="flex gap-8">
+<a class="text-[#fbf9f2] opacity-70 font-label text-xs uppercase hover:opacity-100 hover:text-[#FF5F1F] transition-all" href="#">PRIVACY</a>
+<a class="text-[#fbf9f2] opacity-70 font-label text-xs uppercase hover:opacity-100 hover:text-[#FF5F1F] transition-all" href="#">TERMS</a>
+<a class="text-[#fbf9f2] opacity-70 font-label text-xs uppercase hover:opacity-100 hover:text-[#FF5F1F] transition-all" href="#">MANIFESTO</a>
+</div>
+<div class="font-label text-xs uppercase opacity-50 tracking-widest">
+                ©2024 THE GRITTY GRID ADVISORY. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

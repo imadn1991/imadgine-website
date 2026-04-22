@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&amp;family=Work+Sans:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#656469",
+                    "tertiary-container": "#009de4",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#004b70",
+                    "primary-container": "#ff5f1f",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb59c",
+                    "on-surface": "#1b1c18",
+                    "on-primary-fixed-variant": "#832700",
+                    "tertiary-fixed": "#cae6ff",
+                    "surface-container-high": "#eae8e1",
+                    "on-secondary-fixed": "#1b1b1f",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#5f5e63",
+                    "surface-bright": "#fbf9f2",
+                    "surface-container": "#f0eee7",
+                    "inverse-surface": "#30312c",
+                    "surface-container-highest": "#e4e2dc",
+                    "on-background": "#1b1c18",
+                    "tertiary": "#006493",
+                    "on-tertiary-container": "#00304a",
+                    "surface-container-low": "#f6f4ed",
+                    "tertiary-fixed-dim": "#8dcdff",
+                    "on-secondary-fixed-variant": "#47464b",
+                    "on-surface-variant": "#5b4138",
+                    "on-tertiary-fixed": "#001e30",
+                    "on-primary-container": "#561700",
+                    "primary": "#ab3600",
+                    "error-container": "#ffdad6",
+                    "outline": "#8f7066",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#e3bfb3",
+                    "on-primary-fixed": "#390c00",
+                    "surface-variant": "#e4e2dc",
+                    "surface": "#fbf9f2",
+                    "secondary-fixed": "#e4e1e7",
+                    "surface-tint": "#ab3600",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#dcdad3",
+                    "secondary-fixed-dim": "#c8c5cb",
+                    "background": "#fbf9f2",
+                    "secondary-container": "#e4e1e7",
+                    "inverse-on-surface": "#f3f1ea",
+                    "primary-fixed": "#ffdbcf",
+                    "primary-fixed-dim": "#ffb59c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Bricolage Grotesque"],
+                    "body": ["Work Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .stipple {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px #121216;
+        }
+        .hard-shadow-hover:hover {
+            box-shadow: 0px 0px 0px #121216;
+            transform: translate(2px, 2px);
+        }
+        .ink-border-b { border-bottom: 4px solid #121216; }
+        .ink-border-all { border: 2px solid #121216; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f2] dark:bg-[#121216] border-b-4 border-[#121216] dark:border-[#fbf9f2] flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black uppercase text-[#121216] dark:text-[#fbf9f2] font-['Bricolage_Grotesque'] tracking-tighter" href="#">IMADGINE</a>
+<nav class="hidden md:flex gap-6 font-['Bricolage_Grotesque'] uppercase tracking-tighter">
+<a class="text-[#121216] dark:text-[#fbf9f2] font-medium hover:bg-[#FF5F1F] hover:text-[#fbf9f2] transition-transform hover:translate-y-0.5 hover:translate-x-0.5 px-2" href="#">Denken</a>
+<a class="text-[#FF5F1F] font-black border-b-2 border-[#FF5F1F] px-2" href="#">Samenwerken</a>
+<a class="text-[#121216] dark:text-[#fbf9f2] font-medium hover:bg-[#FF5F1F] hover:text-[#fbf9f2] transition-transform hover:translate-y-0.5 hover:translate-x-0.5 px-2" href="#">Over</a>
+<a class="text-[#121216] dark:text-[#fbf9f2] font-medium hover:bg-[#FF5F1F] hover:text-[#fbf9f2] transition-transform hover:translate-y-0.5 hover:translate-x-0.5 px-2" href="#">Projecten</a>
+</nav>
+</div>
+<button class="bg-[#FF5F1F] text-white px-6 py-2 font-['Space_Grotesk'] font-bold uppercase hard-shadow hard-shadow-hover transition-all">
+            Contact
+        </button>
+</header>
+<main class="pt-24 min-h-screen relative">
+<div class="stipple absolute inset-0 z-0"></div>
+<!-- Hero Section -->
+<section class="px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative z-10">
+<div class="md:col-span-8">
+<span class="font-['Space_Grotesk'] text-sm tracking-[0.3em] uppercase text-primary font-bold mb-4 block">Advisory &amp; Strategie</span>
+<h1 class="text-6xl md:text-8xl font-['Bricolage_Grotesque'] font-extrabold leading-[0.9] tracking-tighter uppercase mb-8">
+                    Samen<br/>werken
+                </h1>
+<p class="text-2xl md:text-3xl font-body font-light max-w-2xl border-l-4 border-primary pl-6 py-2">
+                    'Ik werk met mensen die iets willen veranderen maar vast zitten in hoe het altijd ging.'
+                </p>
+</div>
+<div class="md:col-span-4 md:mt-12">
+<div class="ink-border-all p-2 bg-surface-container-high hard-shadow rotate-2">
+<img alt="Urban Architecture" class="w-full grayscale contrast-125" data-alt="Black and white architectural close-up of a modern brutalist concrete building with sharp angles and dramatic shadows against a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-fhkB3GhfQvB-SGJFCwQ2TmQ7ZDzJp3B5pU2cZtaaMaN-Y1jw8ZdNwAlbHU15d5iAKTnotYdeT3LzA63ZeRPQSrkmtO31BG-a54FyzDIaxQPwIhYmazqLuENnhbDXRYwHCiDY1nmn-UV2mVpqJjiebcRrfoCGn6frjmclK7vcxFP3BtLTFsNwbHsntVnBooMHXlVrQOTN-iGidms7T7vjHpCDRWPWktI0cm_Fgfp91DQlVch0kv3UkDB0nGCs57nfh4RuDBdMhRE"/>
+</div>
+</div>
+</section>
+<!-- Method Section -->
+<section class="bg-on-surface text-surface py-24 px-6 md:px-12 relative overflow-hidden">
+<div class="absolute right-0 top-0 opacity-10 font-['Bricolage_Grotesque'] text-[15rem] leading-none pointer-events-none select-none font-black uppercase">
+                GRIT
+            </div>
+<div class="max-w-4xl relative z-10">
+<h2 class="font-['Space_Grotesk'] text-primary-container text-xl uppercase tracking-widest mb-6">Mijn Aanpak</h2>
+<p class="text-4xl md:text-6xl font-['Bricolage_Grotesque'] font-bold leading-tight mb-12">
+                    'Ik begin altijd met wat er écht speelt...'
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 font-body text-lg opacity-90">
+<p>Geen dikke rapporten die in een lade verdwijnen. Ik graaf diep in de architectuur van je organisatie of project om de blokkades te vinden die vooruitgang in de weg staan.</p>
+<p>Mijn methode is rauw, eerlijk en gericht op directe impact. We bouwen niet voort op wankele fundamenten; we breken af wat niet werkt en reconstrueren vanuit de kern.</p>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="px-6 md:px-12 py-24 bg-surface">
+<div class="mb-16 flex justify-between items-end border-b-4 border-on-surface pb-4">
+<h2 class="text-4xl font-['Bricolage_Grotesque'] font-black uppercase tracking-tighter">Diensten</h2>
+<span class="font-['Space_Grotesk'] text-sm uppercase opacity-60 pb-1">Focus &amp; Executie</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Service 1 -->
+<div class="md:col-span-2 ink-border-all p-8 flex flex-col justify-between group hover:bg-primary-container transition-colors duration-300">
+<div>
+<span class="font-['Space_Grotesk'] font-bold text-primary group-hover:text-white">01</span>
+<h3 class="text-3xl font-['Bricolage_Grotesque'] font-extrabold uppercase mt-4 mb-6 group-hover:text-white">Strategische Herijking</h3>
+<p class="font-body group-hover:text-white opacity-80">Wanneer de koers onduidelijk is geworden door ruis. We strippen de strategie tot de essentie en bouwen een nieuw, robuust plan.</p>
+</div>
+<div class="mt-8 flex justify-end">
+<span class="material-symbols-outlined text-4xl group-hover:text-white" data-icon="architecture">architecture</span>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="md:col-span-2 ink-border-all p-8 flex flex-col justify-between group hover:bg-on-surface hover:text-surface transition-colors duration-300">
+<div>
+<span class="font-['Space_Grotesk'] font-bold text-primary">02</span>
+<h3 class="text-3xl font-['Bricolage_Grotesque'] font-extrabold uppercase mt-4 mb-6">Cultuur Interventie</h3>
+<p class="font-body opacity-80">Patronen doorbreken die innovatie gijzelen. Geen 'heisessies', maar directe confrontatie met de werkelijkheid op de werkvloer.</p>
+</div>
+<div class="mt-8 flex justify-end">
+<span class="material-symbols-outlined text-4xl" data-icon="groups">groups</span>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="md:col-span-1 ink-border-all p-8 bg-surface-container-high flex flex-col group hover:translate-y-[-4px] transition-transform">
+<span class="font-['Space_Grotesk'] font-bold text-primary">03</span>
+<h3 class="text-2xl font-['Bricolage_Grotesque'] font-extrabold uppercase mt-4 mb-4">Project Audit</h3>
+<p class="text-sm font-body mb-8 opacity-70">Een kritische blik op lopende trajecten. Waar lekt energie en waar ligt de onbenutte potentie?</p>
+<div class="mt-auto">
+<span class="material-symbols-outlined text-2xl" data-icon="troubleshoot">troubleshoot</span>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="md:col-span-3 ink-border-all p-8 flex items-center gap-12 group hover:bg-primary-container transition-all">
+<div class="flex-1">
+<span class="font-['Space_Grotesk'] font-bold text-primary group-hover:text-white">04</span>
+<h3 class="text-3xl font-['Bricolage_Grotesque'] font-extrabold uppercase mt-2 group-hover:text-white">Executive Soundboarding</h3>
+<p class="font-body mt-4 group-hover:text-white opacity-80">Individuele begeleiding voor leiders die durven te twijfelen. Een filter voor je wildste ideeën en een spiegel voor je blinde vlekken.</p>
+</div>
+<div class="hidden md:block w-32 h-32 bg-on-surface overflow-hidden">
+<img alt="Detail" class="w-full h-full object-cover grayscale brightness-50" data-alt="Abstract composition of light and shadow on a gridded metal surface with high contrast urban feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXj2w23tAbYguV-ddFXheCdpPHNpR-Eh4l3vOevYhcAOZrlVHd_hVLUvL6r5HmEuZmogA_q49NxXY6o71I_R0MDNGMyl53c6VnNNMU4xzMbCsmAzl1C9MkbyxpRbAp4Bpukm5AtGWbtrL0Y8hRWSS4OtQn5b6IczVHKeF3wTizzWHWK-OoHABqDnt0tOJegrh88FQe8aI1WT87vj9nTSVL3XedMv3MX-ROCivOQddz6zPgMNuYqAYTGM5_WG3QVnsOc6tNQSiyOYA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 md:px-12 py-32 flex flex-col items-center text-center">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-7xl font-['Bricolage_Grotesque'] font-black uppercase mb-8">Klaar om te bouwen?</h2>
+<p class="font-body text-xl mb-12">Geen gladde verkooppraatjes. Alleen werk dat ertoe doet. Laten we praten over wat er echt speelt.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-white text-xl font-['Space_Grotesk'] font-bold uppercase px-12 py-6 hard-shadow hard-shadow-hover transition-all">
+                        Start een gesprek
+                    </button>
+<button class="bg-surface text-on-surface border-4 border-on-surface text-xl font-['Space_Grotesk'] font-bold uppercase px-12 py-6 hard-shadow hard-shadow-hover transition-all">
+                        Download Manifesto
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#121216] dark:bg-[#fbf9f2] border-t-4 border-[#121216] dark:border-[#fbf9f2]">
+<div class="text-lg font-bold text-[#fbf9f2] dark:text-[#121216] font-['Bricolage_Grotesque'] uppercase">IMADGINE</div>
+<div class="flex gap-8 font-['Geist_Mono'] text-xs uppercase tracking-widest">
+<a class="text-[#fbf9f2] dark:text-[#121216] opacity-80 hover:text-[#FF5F1F] hover:opacity-100" href="#">Manifesto</a>
+<a class="text-[#fbf9f2] dark:text-[#121216] opacity-80 hover:text-[#FF5F1F] hover:opacity-100" href="#">Denken</a>
+<a class="text-[#FF5F1F] underline" href="#">Samenwerken</a>
+<a class="text-[#fbf9f2] dark:text-[#121216] opacity-80 hover:text-[#FF5F1F] hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="font-['Geist_Mono'] text-[10px] text-[#fbf9f2] dark:text-[#121216] opacity-60 uppercase tracking-[0.2em]">
+            © 2024 IMADGINE — BUILT ON THE GRITTY GRID
+        </div>
+</footer>
+</body></html>

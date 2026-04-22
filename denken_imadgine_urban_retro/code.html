@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&amp;family=Work+Sans:wght@300;400;600&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Geist+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#656469",
+                        "tertiary-container": "#009de4",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#004b70",
+                        "primary-container": "#ff5f1f",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb59c",
+                        "on-surface": "#1b1c18",
+                        "on-primary-fixed-variant": "#832700",
+                        "tertiary-fixed": "#cae6ff",
+                        "surface-container-high": "#eae8e1",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#5f5e63",
+                        "surface-bright": "#fbf9f2",
+                        "surface-container": "#f0eee7",
+                        "inverse-surface": "#30312c",
+                        "surface-container-highest": "#e4e2dc",
+                        "on-background": "#1b1c18",
+                        "tertiary": "#006493",
+                        "on-tertiary-container": "#00304a",
+                        "surface-container-low": "#f6f4ed",
+                        "tertiary-fixed-dim": "#8dcdff",
+                        "on-secondary-fixed-variant": "#47464b",
+                        "on-surface-variant": "#5b4138",
+                        "on-tertiary-fixed": "#001e30",
+                        "on-primary-container": "#561700",
+                        "primary": "#ab3600",
+                        "error-container": "#ffdad6",
+                        "outline": "#8f7066",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e3bfb3",
+                        "on-primary-fixed": "#390c00",
+                        "surface-variant": "#e4e2dc",
+                        "surface": "#fbf9f2",
+                        "secondary-fixed": "#e4e1e7",
+                        "surface-tint": "#ab3600",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dcdad3",
+                        "secondary-fixed-dim": "#c8c5cb",
+                        "background": "#fbf9f2",
+                        "secondary-container": "#e4e1e7",
+                        "inverse-on-surface": "#f3f1ea",
+                        "primary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#ffb59c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Bricolage Grotesque"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["Geist Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .stipple-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px #121216;
+        }
+        .ink-border-heavy {
+            border: 4px solid #121216;
+        }
+        .ink-border-medium {
+            border: 2px solid #121216;
+        }
+        .interaction-shift:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #121216;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<div class="fixed inset-0 stipple-overlay z-50"></div>
+<!-- TopAppBar -->
+<nav class="sticky top-0 z-40 bg-[#fbf9f2] dark:bg-[#121216] border-b-4 border-[#121216] dark:border-[#fbf9f2] flex justify-between items-center w-full px-6 py-4 max-w-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black uppercase text-[#121216] dark:text-[#fbf9f2] font-['Bricolage_Grotesque'] tracking-tighter">IMADGINE</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-['Bricolage_Grotesque'] uppercase tracking-tighter text-[#FF5F1F] font-black border-b-2 border-[#FF5F1F] px-1 py-1 transition-transform hover:translate-y-0.5 hover:translate-x-0.5" href="#">Denken</a>
+<a class="font-['Bricolage_Grotesque'] uppercase tracking-tighter text-[#121216] dark:text-[#fbf9f2] font-medium hover:bg-[#FF5F1F] hover:text-[#fbf9f2] px-1 py-1 transition-transform hover:translate-y-0.5 hover:translate-x-0.5" href="#">Samenwerken</a>
+<a class="font-['Bricolage_Grotesque'] uppercase tracking-tighter text-[#121216] dark:text-[#fbf9f2] font-medium hover:bg-[#FF5F1F] hover:text-[#fbf9f2] px-1 py-1 transition-transform hover:translate-y-0.5 hover:translate-x-0.5" href="#">Over</a>
+<a class="font-['Bricolage_Grotesque'] uppercase tracking-tighter text-[#121216] dark:text-[#fbf9f2] font-medium hover:bg-[#FF5F1F] hover:text-[#fbf9f2] px-1 py-1 transition-transform hover:translate-y-0.5 hover:translate-x-0.5" href="#">Projecten</a>
+</div>
+</div>
+<button class="bg-primary px-6 py-2 ink-border-medium text-white font-mono uppercase text-sm font-bold hard-shadow interaction-shift">Contact</button>
+</nav>
+<main class="max-w-[1400px] mx-auto px-6 py-12 md:py-24">
+<!-- Hero Section -->
+<header class="mb-20">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<div class="md:w-2/3">
+<span class="font-mono text-primary font-bold tracking-widest uppercase mb-4 block">Manifesto / Denken</span>
+<h1 class="text-6xl md:text-9xl font-black font-headline uppercase leading-[0.85] tracking-tighter mb-8">
+                        Hier <br/> Schrijf <br/> Ik.
+                    </h1>
+<p class="text-xl md:text-3xl font-light max-w-2xl text-on-surface leading-tight">
+                        Over wat ik zie, wat ik mis, en wat ik denk dat anders kan. Geen column voor een krant. Geen LinkedIn-post. Gewoon denken, op papier.
+                    </p>
+</div>
+<div class="md:w-1/3 flex flex-col gap-6 w-full">
+<div class="bg-primary-container p-1 ink-border-heavy hard-shadow rotate-1 h-64 relative overflow-hidden group">
+<img alt="Urban Texture" class="w-full h-full object-cover filter contrast-125 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Gritty black and white macro photograph of textured urban concrete wall with layered paper scraps and spray paint traces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARWc4SzG_zEa1Utptes-IlUzOMgW9gCl1yWpuVgUVOS4qmOLNifpVzewk8KuvR1d606adG3V-jLnBg41Lt2JlSUssLEZnFpS9uZL5RrocN0BKpjFXnHwa4YnLlafVwD05aCMOZMeCiIs-hcVXVIpmEIE3fbm2HCNOUrG2JbJenx8-SrK6lRwQHLmzzXp8khv4SD6dkINntd31TWWk6ph0JZ3it6qvwTbVAF58daeTY-rjwfyZHxOM5SpOdRHifxgfP6SMWx1t0PVQ"/>
+<div class="absolute inset-0 bg-primary opacity-20 mix-blend-multiply"></div>
+</div>
+<div class="font-mono text-xs uppercase tracking-widest bg-surface-container-highest p-4 border-l-4 border-primary">
+                        [Status: Ongefilterd] <br/>
+                        [Locatie: De Straat] <br/>
+                        [Moment: Nu]
+                    </div>
+</div>
+</div>
+</header>
+<!-- Filter Tags -->
+<section class="mb-16">
+<div class="flex flex-wrap gap-4 items-center border-t-2 border-b-2 border-outline py-6">
+<span class="font-mono text-xs uppercase font-bold mr-4 text-outline">Filter op:</span>
+<button class="px-4 py-1 border border-outline font-mono text-xs uppercase hover:bg-primary-container hover:text-white transition-colors bg-primary-container text-white">Alle Essays</button>
+<button class="px-4 py-1 border border-outline font-mono text-xs uppercase hover:bg-primary-container hover:text-white transition-colors">Identiteit</button>
+<button class="px-4 py-1 border border-outline font-mono text-xs uppercase hover:bg-primary-container hover:text-white transition-colors">Beleid &amp; wijk</button>
+<button class="px-4 py-1 border border-outline font-mono text-xs uppercase hover:bg-primary-container hover:text-white transition-colors">Voetbal</button>
+<button class="px-4 py-1 border border-outline font-mono text-xs uppercase hover:bg-primary-container hover:text-white transition-colors">Opvoeding &amp; jeugd</button>
+<button class="px-4 py-1 border border-outline font-mono text-xs uppercase hover:bg-primary-container hover:text-white transition-colors">Systemen</button>
+</div>
+</section>
+<!-- Bento Grid Essays -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Essay -->
+<article class="md:col-span-8 group">
+<div class="bg-surface-container-low ink-border-medium flex flex-col md:flex-row h-full overflow-hidden">
+<div class="md:w-1/2 overflow-hidden border-r-0 md:border-r-2 border-outline">
+<img alt="The Grid" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide cinematic shot of brutalist architecture under a moody overcast sky with heavy shadows and sharp geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXzwyw4TdA8XAXFJQzX3p5178Uq-kfTb2-dY5NYZny9u8_RUG9PJC4qu-tdWPRo9CzCjO1hesb7iNcDrxSIyhtdf1XbOTM4-DAhRJ4VkRZ2kVgUPz0Va2uAIkpZoPzjKV_Hf9Z3qX32Jy5nv_DhC688H-Ke68Ob4CCZLvhOFE_eDaz4hDykCZv2m5UBMaHNNQzuOYR2D3IgQsc3j2ny9Msm68vRTq9_JhRpb-eqjCt_mPIbzljUdBxpTEiYKumNnVlX5rzkTRMtl0"/>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-[10px] bg-primary text-white px-2 py-0.5 uppercase tracking-tighter">Featured Essay</span>
+<span class="font-mono text-[10px] text-outline uppercase">12 Oct 2024</span>
+</div>
+<h2 class="text-4xl font-black font-headline uppercase leading-none mb-6 group-hover:text-primary transition-colors">De Onzichtbare Grens in de Wijk</h2>
+<p class="text-on-surface-variant font-body mb-8">Waarom we beleid maken voor mensen die we niet spreken, en de realiteit van de straat negeren voor een Excel-sheet.</p>
+</div>
+<a class="font-mono text-xs font-bold uppercase flex items-center gap-2 group/link" href="#">
+                            Lees Verder 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Small Essay 1 -->
+<article class="md:col-span-4 group">
+<div class="bg-surface p-8 ink-border-medium h-full flex flex-col justify-between hover:bg-surface-container-highest transition-colors">
+<div>
+<div class="flex justify-between mb-6">
+<span class="font-mono text-[10px] border border-outline px-2 py-0.5 uppercase">Voetbal</span>
+<span class="font-mono text-[10px] text-outline uppercase">04 Oct</span>
+</div>
+<h2 class="text-2xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">De Zondagse Mis</h2>
+<p class="text-sm font-body text-on-surface-variant line-clamp-3">Hoe het amateurvoetbal de laatste plek is waar de maatschappij nog echt samenkomt.</p>
+</div>
+<a class="mt-8 font-mono text-xs font-bold uppercase flex items-center gap-2 group/link" href="#">
+                        Lees Essay
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Small Essay 2 -->
+<article class="md:col-span-4 group">
+<div class="bg-surface p-8 ink-border-medium h-full flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">identity_platform</span>
+</div>
+<div class="z-10">
+<div class="flex justify-between mb-6">
+<span class="font-mono text-[10px] border border-outline px-2 py-0.5 uppercase">Identiteit</span>
+<span class="font-mono text-[10px] text-outline uppercase">28 Sep</span>
+</div>
+<h2 class="text-2xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">Vreemdeling in Eigen Spiegel</h2>
+<p class="text-sm font-body text-on-surface-variant">Over de zoektocht naar een thuis tussen twee werelden die beide niet helemaal passen.</p>
+</div>
+<a class="mt-8 font-mono text-xs font-bold uppercase flex items-center gap-2 group/link z-10" href="#">
+                        Lees Essay
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Medium Essay with Image -->
+<article class="md:col-span-8 group">
+<div class="bg-surface-container-highest ink-border-medium flex flex-col md:flex-row-reverse h-full overflow-hidden">
+<div class="md:w-2/5 overflow-hidden border-l-0 md:border-l-2 border-outline">
+<img alt="System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale brightness-90" data-alt="Abstract extreme close up of a vintage typewriter and ink stains on aged paper with sharp mechanical details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpJae8yLo-S-HTW4PRBYF8njODYF5EI1GMCLN4hzGm5cSyLKX1ZM5x7SCpxTg0OO_yayMF3verr4eXbcnEENpMpfuUaLzqSAPmMempVeIrhINX_d2EEiU9EUqLMlUn1vWYPO14tMU4QtXbQVhEjzbdKhmE1oz2RtMG6RI5cVtW0iE4RIsG2piU_Fe0tp-zTf3E_6Q9RpZ55kkDbm9bynLKxD6n4cQ5p-0fr0W-T2dG_TciGj5WeNGNxfzfQfSOBmlciN6s9x5-Ukk"/>
+</div>
+<div class="md:w-3/5 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between mb-6">
+<span class="font-mono text-[10px] border border-outline px-2 py-0.5 uppercase">Systemen</span>
+<span class="font-mono text-[10px] text-outline uppercase">15 Sep</span>
+</div>
+<h2 class="text-3xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">De Paradox van de Planner</h2>
+<p class="text-on-surface-variant font-body">Waarom elke poging om de stad te 'optimaliseren' de ziel juist verder naar de randen drukt.</p>
+</div>
+<a class="mt-6 font-mono text-xs font-bold uppercase flex items-center gap-2 group/link" href="#">
+                            Open Archief
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Typography Only Callout -->
+<article class="md:col-span-12">
+<div class="bg-[#121216] p-12 text-center border-4 border-primary relative">
+<div class="absolute inset-0 stipple-overlay opacity-5"></div>
+<h2 class="font-headline text-5xl md:text-7xl font-black text-[#fbf9f2] uppercase tracking-tighter mb-8 italic">
+                        "Echt denken begint waar de structuur ophoudt."
+                    </h2>
+<div class="w-24 h-1 bg-primary mx-auto"></div>
+</div>
+</article>
+<!-- Small Essay 3 -->
+<article class="md:col-span-4 group">
+<div class="bg-surface p-8 ink-border-medium h-full flex flex-col justify-between hover:translate-y-[-4px] hover:translate-x-[4px] transition-all">
+<div>
+<div class="flex justify-between mb-6">
+<span class="font-mono text-[10px] border border-outline px-2 py-0.5 uppercase">Opvoeding</span>
+<span class="font-mono text-[10px] text-outline uppercase">02 Sep</span>
+</div>
+<h2 class="text-2xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">Vaders van de Straat</h2>
+<p class="text-sm font-body text-on-surface-variant">De onzichtbare rollen die mannen spelen in het grootbrengen van een buurt.</p>
+</div>
+<a class="mt-8 font-mono text-xs font-bold uppercase flex items-center gap-2 group/link" href="#">
+                        Lees Essay
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Small Essay 4 -->
+<article class="md:col-span-4 group">
+<div class="bg-primary-container p-8 border-4 border-[#121216] h-full flex flex-col justify-between hard-shadow">
+<div>
+<div class="flex justify-between mb-6">
+<span class="font-mono text-[10px] bg-[#121216] text-white px-2 py-0.5 uppercase">Policy</span>
+<span class="font-mono text-[10px] text-[#121216] uppercase">21 Aug</span>
+</div>
+<h2 class="text-2xl font-black font-headline uppercase leading-tight mb-4 text-[#121216]">De Papieren Wijk</h2>
+<p class="text-sm font-body text-[#121216] opacity-80">Wanneer beleid alleen nog maar over cijfers gaat, verliezen we de mensen uit het oog.</p>
+</div>
+<a class="mt-8 font-mono text-xs font-bold uppercase flex items-center gap-2 text-[#121216] hover:underline" href="#">
+                        Lees Essay
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Small Essay 5 -->
+<article class="md:col-span-4 group">
+<div class="bg-surface p-8 ink-border-medium h-full flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div>
+<div class="flex justify-between mb-6">
+<span class="font-mono text-[10px] border border-outline px-2 py-0.5 uppercase">Urban</span>
+<span class="font-mono text-[10px] text-outline uppercase">10 Aug</span>
+</div>
+<h2 class="text-2xl font-black font-headline uppercase leading-tight mb-4 group-hover:text-primary transition-colors">Lof der Vertraging</h2>
+<p class="text-sm font-body text-on-surface-variant">In een stad die altijd rent, is stilstand de ultieme vorm van verzet.</p>
+</div>
+<a class="mt-8 font-mono text-xs font-bold uppercase flex items-center gap-2 group/link" href="#">
+                        Lees Essay
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-20 flex justify-center">
+<button class="px-12 py-4 ink-border-heavy font-mono font-bold uppercase text-lg interaction-shift hard-shadow bg-surface hover:bg-primary-container hover:text-white transition-colors">
+                Toon Meer Gedachten
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#121216] dark:bg-[#fbf9f2] w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t-4 border-[#121216] dark:border-[#fbf9f2] relative mt-24">
+<div class="absolute inset-0 stipple-overlay opacity-5 bg-white pointer-events-none"></div>
+<div class="flex flex-col gap-2">
+<span class="text-lg font-bold text-[#fbf9f2] dark:text-[#121216] font-['Geist_Mono']">IMADGINE</span>
+<p class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-[#fbf9f2] dark:text-[#121216] opacity-80">© 2024 IMADGINE — BUILT ON THE GRITTY GRID</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-[#fbf9f2] dark:text-[#121216] opacity-80 hover:text-[#FF5F1F] hover:opacity-100" href="#">Manifesto</a>
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-[#FF5F1F] underline" href="#">Denken</a>
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-[#fbf9f2] dark:text-[#121216] opacity-80 hover:text-[#FF5F1F] hover:opacity-100" href="#">Samenwerken</a>
+<a class="font-['Geist_Mono'] text-xs uppercase tracking-widest text-[#fbf9f2] dark:text-[#121216] opacity-80 hover:text-[#FF5F1F] hover:opacity-100" href="#">Contact</a>
+</div>
+</footer>
+</body></html>
