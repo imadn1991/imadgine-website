@@ -20,12 +20,15 @@ jobs:
 
       - run: npm run build
 
-      - name: Deploy via rsync to TransIP
+      - name: Deploy via SFTP to TransIP
+        env:
+          DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan imadgi.ssh.transip.me >> ~/.ssh/known_hosts
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            ./out/ imadginenl@imadgi.ssh.transip.me:/httpdocs/
+          sudo apt-get install -y lftp
+          lftp -e "
+            set sftp:auto-confirm yes;
+            set net:timeout 30;
+            set net:max-retries 3;
+            mirror -R --delete --no-perms --parallel=4 --verbose ./out/ /httpdocs/;
+            quit
+          " -u imadginenl,"$DEPLOY_PASSWORD" sftp://imadgi.ssh.transip.me
