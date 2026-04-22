@@ -20,7 +20,7 @@ export default function DenkenPage() {
         </header>
 
         {/* The Essay */}
-        <article className="max-w-3xl">
+        <article className="max-w-5xl">
           {/* Meta */}
           <div className="flex items-center gap-4 mb-10">
             <span className="font-label text-[11px] bg-primary text-white px-3 py-1 uppercase tracking-tighter">
@@ -128,7 +128,7 @@ export default function DenkenPage() {
             </p>
 
             {/* Image */}
-            <figure className="my-12 border-2 border-ink">
+            <figure className="my-12 border-2 border-ink w-4/5 mx-auto">
               <img
                 src="https://media.licdn.com/dms/image/v2/D4E12AQHqKsY-mC3T3A/article-inline_image-shrink_1500_2232/B4EZ1UvOrDIQAU-/0/1775243161282?e=1778716800&v=beta&t=lpofuErYcmkcnM1FV3B4SaaomMJNyurLFXEkam74U54"
                 alt="Voetbal International — illustratie bij het artikel"
